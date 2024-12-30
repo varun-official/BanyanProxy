@@ -9,3 +9,11 @@ BanyanProxy is a high-performance, multi-worker HTTP proxy server built with Nod
 - **Configurable**: All rules, upstreams, and other settings are configurable through a central configuration file.
 - **Fallback Handling**: If no matching rule is found, it falls back to the default `/` rule.
 
+### Configuration Fields
+
+- **listen**: The port where the proxy server listens.
+- **workers**: The number of worker processes to spawn.
+- **upstreams**: List of upstream services with unique `id` and `url`.
+- **rules**: Path-based rules that map request URLs to upstream services.
+
+
