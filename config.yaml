@@ -1,0 +1,18 @@
+server:
+  listen: 8080
+  upstreams:
+    - id: "upstream1"
+      url: "jsonplaceholder.typicode.com"
+    - id: "upstream2"
+      url: "https://another-api.com/service"
+  rules:
+    - upstreams:
+        - "upstream1"
+      path: "/todos"
+    - upstreams:
+        - "upstream1"
+      path: "/"
+  workers: 4
+  headers:
+    - key: "Content-Type"
+      value: "application/json"
